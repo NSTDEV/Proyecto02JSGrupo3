@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Proyecto 02 JS</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='./styles/style.css'>
 </head>
+
 <body>
-    
+    <main>
+        <h1 class="title">Comprador de precios</h1>
+        <section class="container">
+            <h2 class="sub-title">Agregar Producto</h2>
+            <form id="product-form">
+                <input type="text" class="filter-input" id="name" placeholder="Nombre del producto" required>
+                <input type="text" class="filter-input" id="price" placeholder="Precio del producto" required>
+                <input type="text" class="filter-input" id="market" placeholder="Nombre del comercio" required>
+                <input type="text" class="filter-input" id="categorie" placeholder="Categoria" required>
+
+                <button class="page-button" onclick="agregarProducto()">Agregar Producto</button>
+            </form>
+        </section>
+
+        <section class="container">
+            <h2 class="sub-title">Listado de productos</h2>
+
+            <button class="page-button" onclick="mostrarListaDeProductos()">Listar Productos</button>
+            <ul id="list-of-products" class="products-container">
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2 class="sub-title">Productos más baratos</h2>
+
+            <button class="page-button" onclick="filtroMenorPrecio()">Productos más baratos</button>
+            <ul id="low-prices" class="products-container">
+            </ul>
+        </section>
+    </main>
+
+    <script src="../src/main.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Ubuntu:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main {
+    margin: 2%;
+}
+
+.container {
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.sub-title {
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+#product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-input {
+    width: 30%;
+    font-size: 1.2rem;
+    margin-block: .5rem;
+}
+
+.page-button {
+    font-size: 1.5rem;
+    padding: .5rem;
+    margin-inline: auto;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: #0b0b0b;
+    color: #f9f9f9;
+}
