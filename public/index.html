@@ -17,9 +17,21 @@
             <form id="product-form">
                 <input type="text" class="filter-input" id="name" placeholder="Nombre del producto" required>
                 <input type="number" class="filter-input" id="price" placeholder="Precio del producto" required>
-                <input type="text" class="filter-input" id="market" placeholder="Nombre del comercio" required>
-                <input type="text" class="filter-input" id="categorie" placeholder="Categoria" required>
-
+                <!--<input type="text" class="filter-input" id="market" placeholder="Nombre del comercio" required>-->
+                
+                <select class="filter-input" id="market" >
+                    <option required>Nombre del comercio</option>
+                    <option value="1">Comodin</option>
+                    <option value="2">Carrefour</option>
+                    <option value="3">Chango Mas</option>
+                  </select>
+                  <select class="filter-input" id="categoria" >
+                    <option required>Categoria</option>
+                    <option value="1">Lacteos</option>
+                    <option value="2">Bebidas</option>
+                    <option value="3">Mercaderia</option>
+                  </select>
+                <!--<input type="text" class="filter-input" id="categorie" placeholder="Categoria" required>-->
                 <button class="page-button" type="button" onclick="agregarProducto()">Agregar</button>
             </form>
         </section>
