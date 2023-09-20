@@ -1,4 +1,4 @@
-const listaDeProductos = [
+/**const listaDeProductos = [
     {
         "nombre": "Arroz x1Kg",
         "precio": 500.99,
@@ -89,7 +89,8 @@ const listaDeProductos = [
         "supermercado": "Vea",
         "categoria": "Lácteos"
     }
-];
+];*/
+const listaDeProductos = [];
 
 let productosMasEconomicos = [];
 
@@ -132,7 +133,7 @@ function agregarProducto() {
         const nuevoProducto = { "nombre": nombre, "precio": precio, "supermercado": supermercado, "categoria": categoria };
         listaDeProductos.push(nuevoProducto);
 
-        mostrarListaDeProductos()
+     //   mostrarListaDeProductos()
         document.getElementById('product-form').reset();
         alert("¡Producto agregado correctamente!");
     } else {
