@@ -11,33 +11,50 @@
 
 <body>
     <main>
-        <h1 class="title">Comprador de precios</h1>
-        <section class="container">
-            <h2 class="sub-title">Agregar Producto</h2>
-            <form id="product-form">
-                <input type="text" class="filter-input" id="name" placeholder="Nombre del producto" required>
-                <input type="text" class="filter-input" id="price" placeholder="Precio del producto" required>
-                <input type="text" class="filter-input" id="market" placeholder="Nombre del comercio" required>
-                <input type="text" class="filter-input" id="categorie" placeholder="Categoria" required>
+        <h1 class="title">PROYECTO JS 02 FPW | Comparador</h1>
 
-                <button class="page-button" onclick="agregarProducto()">Agregar Producto</button>
-            </form>
-        </section>
+        <div class="general-container">
 
-        <section class="container">
-            <h2 class="sub-title">Listado de productos</h2>
+            <section class="add-product-container">
+                <h2 class="sub-title">Agregar un Producto</h2>
+                <form id="product-form">
+                    <input type="text" class="filter-input" id="name" placeholder="Nombre del producto" required>
+                    <input type="number" class="filter-input" id="price" placeholder="Precio del producto" required>
 
-            <button class="page-button" onclick="mostrarListaDeProductos()">Listar Productos</button>
-            <ul id="list-of-products" class="products-container">
-            </ul>
-        </section>
+                    <select class="filter-input" id="market" required>
+                        <option value="" disabled selected>Distribuidor</option>
+                        <option value="1">Comodin</option>
+                        <option value="2">Carrefour</option>
+                        <option value="3">Chango Mas</option>
+                        <option value="4">Vea</option>
+                        <option value="5">Jaguar</option>
+                    </select>
 
-        <section class="container">
-            <h2 class="sub-title">Productos más baratos</h2>
+                    <select class="filter-input" id="categorie" required>
+                        <option value="" disabled selected>Categoria</option>
+                        <option value="1">Lacteos</option>
+                        <option value="2">Bebidas</option>
+                        <option value="3">Carnes / producto animal</option>
+                        <option value="4">Frutas y verduras</option>
+                        <option value="5">Golocinas</option>
+                        <option value="6">Higiene</option>
+                        <option value="7">Hogar</option>
+                    </select>
 
-            <button class="page-button" onclick="filtroMenorPrecio()">Productos más baratos</button>
-            <ul id="low-prices" class="products-container">
-            </ul>
+                    <button class="page-button" type="button" onclick="agregarProducto()">Agregar</button>
+                </form>
+            </section>
+
+            <section class="buttons-container">
+                <button class="page-button" onclick="mostrarListaDeProductos()">Listar Productos</button>
+                <button class="page-button" onclick="filtroMenorPrecio()">Productos más baratos</button>
+            </section>
+
+        </div>
+
+        <section class="products-container">
+            <div id="product-list" class="products-container">
+            </div>
         </section>
     </main>
 
