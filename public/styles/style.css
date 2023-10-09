@@ -35,11 +35,12 @@ main {
 }
 
 .sub-title {
-    width: inherit;
+    width: max-content;
+    text-align: center;
     font-size: 2rem;
     margin-block: 3rem 1rem;
     margin-inline: auto;
-    padding: 1rem;
+    padding: 1rem 5rem;
     background-color: #0b0b0b;
     color: #f9f9f9;
 }
@@ -89,6 +90,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    text-align: center;
     transition: .3s;
 }
 
@@ -98,7 +100,7 @@ main {
     justify-content: center;
     gap: .5rem;
     width: 30%;
-    margin: 1rem;
+    margin: 1rem .5rem;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     border: 3px solid #0b0b0b;
