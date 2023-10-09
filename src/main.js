@@ -1,35 +1,4 @@
-const listaDeProductos = [
-    {
-        "nombre": "Papel higiénico x4/u",
-        "precio": 520.99,
-        "distribuidor": "Chango Más",
-        "categoria": "Higiene"
-    },
-    {
-        "nombre": "Huevos x12/u",
-        "precio": 470.00,
-        "distribuidor": "Carrefour",
-        "categoria": "Carnes / producto animal"
-    },
-    {
-        "nombre": "Jabón de manos x400ml",
-        "precio": 450.25,
-        "distribuidor": "Comodín",
-        "categoria": "Higiene"
-    },
-    {
-        "nombre": "Tomates x1Kg",
-        "precio": 450.00,
-        "distribuidor": "Jaguar",
-        "categoria": "Frutas y verduras"
-    },
-    {
-        "nombre": "Queso x1Kg",
-        "precio": 2200.75,
-        "distribuidor": "Vea",
-        "categoria": "Lacteos"
-    }
-];
+const listaDeProductos = [];
 
 let tituloDeLista = null;
 
@@ -46,7 +15,7 @@ function mostrarEnHTML(id, tituloSection, listaDeProductos) {
         tituloDeLista = titulo;
     } else {
         tituloDeLista.textContent = tituloSection;
-    }
+    };
 
     lista.innerHTML = '';
 
@@ -98,34 +67,61 @@ function agregarProducto() {
         alert("¡Producto agregado correctamente!");
     } else {
         alert("Por favor, complete todos los campos.");
-    }
-}
+    };
+};
 
-// Filtro que devuelve los 3 productos más baratos
+// Filtro que devuelve los productos más baratos
 function filtroMenorPrecio() {
     ocultarListaDeProductos('product-list');
 
-    listaDeProductos.sort((productoA, productoB) => productoA.precio - productoB.precio);
+    // Crea un objeto para almacenar el producto más barato por nombre
+    const productosMasBaratosPorNombre = [];
 
-    mostrarEnHTML('product-list', 'Productos más económicos', listaDeProductos.slice(0, 3));
-    alert("Estos son los 3 productos más económicos");
+    if (listaDeProductos.length > 0) {
+        listaDeProductos.forEach(producto => {
+            const nombre = producto.nombre;
+            const precio = producto.precio;
+            const categoria = producto.categoria;
+            const distribuidor = producto.distribuidor;
+
+            // Si es la primera vez que encontramos este nombre o si el precio es más bajo,
+            // actualiza el producto más barato por nombre
+            if (!productosMasBaratosPorNombre[nombre] || precio < productosMasBaratosPorNombre[nombre].precio) {
+                productosMasBaratosPorNombre[nombre] = { nombre, precio, categoria, distribuidor };
+            };
+        });
+
+        // Convierte el objeto en un array de productos
+        const productosMasBaratos = Object.values(productosMasBaratosPorNombre);
+
+        mostrarEnHTML('product-list', 'Productos más baratos', productosMasBaratos);
+        alert(`Los productos más económicos:`);
+    } else {
+        alert('No hay productos carcados');
+    };
+
     listaVisible = true;
-}
+};
 
 // Cambiar las listas para mejor visualización del usuario
 let listaVisible = true;
 
 function mostrarListaDeProductos() {
-    ocultarListaDeProductos('product-list');
+    if (listaDeProductos.length > 0) {
+        ocultarListaDeProductos('product-list');
 
-    mostrarEnHTML('product-list', 'Lista de Productos', listaDeProductos);
+        mostrarEnHTML('product-list', 'Lista de Productos', listaDeProductos);
+    } else {
+        alert('No hay productos carcados');
+    };
+
     listaVisible = true;
-}
+};
 
 function ocultarListaDeProductos(id) {
     const lista = document.getElementById(id);
 
     if (lista) {
         lista.innerHTML = '';
-    }
+    };
 };
